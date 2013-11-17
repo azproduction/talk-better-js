@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Even Better JavaScript</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<link rel="stylesheet" href="styles/screen.css">
+	<link rel="stylesheet" href="styles/print.css" media="print">
+
+    <link rel="stylesheet" href="styles/idea.min.css">
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Even Better JavaScript</h1>
+		<a href="http://twitter.com/azproduction">Михаил Давыдов</a></p>
+	</header>
+
+	<section class="slide null">
+		<img src="images/yandex.svg" class="yandex"/>
+	</section>
+
+    <section class="slide first"><div class="arrow">
+    	<img src="images/yandex.svg" class="yandex"/>
+		<h2>Even Better JavaScript</h2>
+        <div class="info">
+            <p class="author">Михаил Давыдов</p>
+        </div>
+    </div></section>
+
+    <section class="slide">
+        <h2>Куча кода</h2>
+        <ul>
+            <li>Все в куче</li>
+            <li class="next">Модули &mdash; просто файлы</li>
+            <li class="next">Код никак не собирается</li>
+        </ul>
+   	</section>
+
+    <section class="slide">
+        <h2>Модульные подходы и сборка</h2>
+        <ul>
+            <li>CommonJS/Modules + Browserify</li>
+            <li class="next">CommonJS/Modules + <a href="https://github.com/azproduction/lmd">LMD</a></li>
+            <li class="next">AMD + r.js</li>
+            <li class="next"><a href="http://habrahabr.ru/post/181536/">Путь JavaScript модуля</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Нет документации</h2>
+        <ul>
+            <li>Код плохо документирован</li>
+            <li class="next">Код не правильно документирован</li>
+            <li class="next">Не корректно оформленный JSDoc</li>
+        </ul>
+   	</section>
+
+    <section class="slide">
+        <h2>"Отличный" пример</h2>
+        <img src="pictures/you-dont-say.png" alt="" class="next place b r">
+        <pre class="javascript">
+            <code>// Функция ololo, преобразовывает pewpew</code>
+            <code>// @param pewpew</code>
+            <code>function ololo(pewpew) {</code>
+            <code> </code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Хороший пример</h2>
+        <pre class="javascript">
+            <code>/**</code>
+            <code> * Encodes string using some algorithm</code>
+            <code> * @param {String} string</code>
+            <code> * @returns {String}</code>
+            <code> */</code>
+            <code>function encode(string) {</code>
+            <code>    // ...</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Документация</h2>
+        <ul>
+            <li>JSDoc</li>
+            <li>jsdoc-toolkit</li>
+            <li>jsdoc3</li>
+            <li>Closure Compiler JSDoc</li>
+            <li>Чем проверить
+                <ul>
+                    <li><a href="https://github.com/mdevils/node-jscs">jscs</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Кодстайл</h2>
+        <ul>
+            <li>Пример <a href="https://github.com/airbnb/javascript">airbnb/javascript</a></li>
+            <li>Инструменты
+                <ul>
+                    <li>editorconfig (табы/пробелы)</li>
+                    <li>jshint (общий стиль и баги)</li>
+                    <li><a href="https://github.com/mdevils/node-jscs">jscs</a> (конкретные случаи)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Сложность/Качество кода</h2>
+        <ul>
+            <li>Logical Lines of Code</li>
+            <li class="next">Statements per function (12 и меньше - ОК)</li>
+            <li class="next">Cyclomatic complexity (5 и меньше - ОК)</li>
+            <li class="next">Nested loops (2 и меньше - ОК)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Halstead complexity measures</h2>
+        <ul>
+            <li>Difficulty &mdash; на сколько сложно понимать, развивать и ревьюить такой код</li>
+        </ul>
+        <pre>
+            <code>difficulty = (#distinct_operators / 2) *</code>
+            <code>             (#operands / #distinct_operands)</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Halstead complexity measures</h2>
+        <ul>
+            <li>Volume &mdash; количество кода</li>
+        </ul>
+        <pre>
+            <code>volume = (#operators + #operands) *</code>
+            <code>         log2(#distinct_operators + #distinct_operands)</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Halstead complexity measures</h2>
+        <ul>
+            <li>Effort &mdash; усилие на создание такого кода</li>
+        </ul>
+        <pre>
+            <code>effort = difficulty * volume</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Halstead complexity measures</h2>
+        <ul>
+            <li>Time &mdash; время на написание всего кода, секунд</li>
+        </ul>
+        <pre>
+            <code>time = effort / 18</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Halstead complexity measures</h2>
+        <ul>
+            <li>Bugs &mdash; оценка количства скрытых багов в коде</li>
+        </ul>
+        <pre>
+            <code>bugs = pow(effort, 2/3) / 3000</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Maintainability index</h2>
+        <ul>
+            <li>[-Infinity..171]</li>
+            <li>65 &mdash; OK (больше &mdash; лучше)</li>
+        </ul>
+        <pre>
+            <code>mi = 171 -</code>
+            <code>     (3.42 * ln(mean_effort)) -</code>
+            <code>     (0.23 * ln(mean_cyclomatic_complexity)) -</code>
+            <code>     (16.2 * ln(mean_lloc))</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Сложность/Качество кода</h2>
+        <ul>
+            <li><a href="http://jsoverson.github.io/plato/examples/jquery/">Оценка сложности для JavaScript</a></li>
+            <li><a href="https://github.com/azproduction/npm-package">Конфиги с типовыми настройками</a></li>
+        </ul>
+    </section>
+
+    <div class="slide last">
+        <img src="images/yandex.svg" class="yandex"/>
+        <h2>Even Better JavaScript</h2>
+        <div class="info">
+            <p class="author">Михаил Давыдов</p>
+            <p class="author social">
+                <a href="http://habrahabr.ru/users/azproduction"><img src="images/js.svg" alt=""/></a><a href="http://github.com/azproduction"><img src="images/github.svg" alt=""/></a><a href="http://twitter.com/azproduction"><img src="images/twitter.svg" alt=""/></a><a href="http://twitter.com/azproduction">@azproduction</a>
+            </p>
+        </div>
+    </div>
+
+	<div class="progress"><div></div></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/highlight.min.js"></script>
+    <script src="js/shower/shower.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
